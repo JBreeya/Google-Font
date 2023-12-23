@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Customizer</title>
+  <link href="./src/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./src/css/styles.css" rel="stylesheet" >
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">Font Customizer</h1>
+  
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <label for="fontSelect" class="form-label">Select Font</label>
+      <select id="fontSelect" class="form-select" onchange="updateFont()">
+        <option value="Roboto Regular">Roboto</option>
+        <option value="Open Sans Regular">Open Sans</option>
+        <option value="Oswald Regular">Oswald</option>
+        <option value="Poppins Regular">Poppins</option>
+        <option value="Kalnia Regular">Kalnia</option>
+        <option value="Rubik Bubbles Regular">Rubik Bubbles</option>
+        <option value="Prompt Regular">Prompt</option>
+        <option value="Lato Regular">Lato</option>
+        <option value="Merriweather Regular">Merriweather</option>
+        <option value="Montserrat Regular">Montserrat</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="fontSizeInput" class="form-label">Font Size (Px)</label>
+      <input type="number" id="fontSizeInput" min="10" max="45" value="16" oninput="updateFont()" class="form-control">
+    </div>
+    <div class="col-md-4">
+      <label for="fontWeightSelect" class="form-label">Select Font Weight</label>
+      <select id="fontWeightSelect" class="form-select" onchange="updateFont()">
+        <option value="100">Thin</option>
+        <option value="300">Light</option>
+        <option value="400">Regular</option>
+        <option value="500">Medium</option>
+        <option value="600">Semi-Bold</option>
+        <option value="700">Bold</option>
+        <option value="800">Extra-Bold</option>
+        <option value="900">Black</option>
+        <option value="italic 100">Thin Italic</option>
+        <option value="italic 300">Light Italic</option>
+        <option value="italic 400">Regular Italic</option>
+        <option value="italic 500">Medium Italic</option>
+        <option value="italic 600">Semi-Bold Italic</option>
+        <option value="italic 700">Bold Italic</option>
+        <option value="italic 800">Extra-Bold Italic</option>
+        <option value="italic 900">Black Italic</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <p id="customText">
+      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+      a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
+      0 1 2 3 4 5 6 7 8 9
+    </p>
+  </div>
+</div>
+
+<script src="./src/js/bootstrap.bundle.min.js"></script>
+<script>
+  function updateFont() {
+    var selectedFont = document.getElementById('fontSelect').value;
+    var selectedFontSize = document.getElementById('fontSizeInput').value + 'px';
+    var selectedFontWeight = document.getElementById('fontWeightSelect').value;
+
+    var customText = document.getElementById('customText');
+    customText.style.font = `${selectedFontWeight} ${selectedFontSize} ${selectedFont}, sans-serif`;
+  }
+</script>
+
+</body>
+</html>
