@@ -1,4 +1,4 @@
-#**Font Customizer Project Description:**
+# Font Customizer Project Description:
 
 **Introduction:**
 Dive into the Font Customizer, a web application designed using HTML, CSS (Bootstrap), and JavaScript, offering an intuitive interface for personalized typography adjustments. 🎨💻
